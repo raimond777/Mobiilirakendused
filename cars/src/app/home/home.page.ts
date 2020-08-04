@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  carTitle = "List autodest" 
+  cars = ["Audi", "BMW", "Tesla", "Ferrari", "Mercedes"];
 
   constructor() {}
 
