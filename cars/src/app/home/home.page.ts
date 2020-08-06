@@ -1,14 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CarService } from '../car.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
   carTitle = "List autodest" 
-  cars = ["Audi", "BMW", "Tesla", "Ferrari", "Mercedes"];
+  cars;
 
-  constructor() {}
+  constructor(private carService: CarService) {}
+  ngOnInit(): void {
+    this.cars = this.carService.cars;
+  }
 
 }
