@@ -6,6 +6,11 @@ const routes: Routes = [
   {
     path: '',
     component: Tab1Page,
+  },
+  {
+    path: 'hero-view/:heroId',
+    loadChildren: () => import('./hero-view/hero-view.module')
+    .then( m => m.HeroViewPageModule)
   }
 ];
 

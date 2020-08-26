@@ -1,15 +1,17 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Marvel Heroes
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-list>
-    <ion-item *ngFor= "let hero of marvelHeroes">
+    <ion-item *ngFor= "let hero of marvelHeroes"
+     [routerLink]="['hero-view', hero.id]" >
       {{hero.name}} 
+     
     </ion-item>  
   </ion-list>
 </ion-content>
