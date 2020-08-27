@@ -1,0 +1,7 @@
+{
+  "name": "zoo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
