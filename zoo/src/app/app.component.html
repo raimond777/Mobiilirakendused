@@ -6,30 +6,45 @@
   </ion-header>
   <ion-content>
     <ion-list>
-      <ion-item>
-        <ion-icon name="mail" slot="start"></ion-icon>
-        <ion-label>Inbox</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-icon name="paper-plane" slot="start"></ion-icon>
-        <ion-label>Outbox</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-icon name="heart" slot="start"></ion-icon>
-        <ion-label>Favorites</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-icon name="archive" slot="start"></ion-icon>
-        <ion-label>Archived</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-icon name="trash" slot="start"></ion-icon>
-        <ion-label>Trash</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-icon name="warning" slot="start"></ion-icon>
-        <ion-label>Spam</ion-label>
-      </ion-item>
+      <ion-menu-toggle> 
+        <ion-item routerLink="/tabs/animals">
+          <ion-icon name="logo-tux" slot="start"></ion-icon>
+          <ion-label>Loomad</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="paper-plane" slot="start"></ion-icon>
+          <ion-label>Outbox</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="heart" slot="start"></ion-icon>
+          <ion-label>Favorites</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="archive" slot="start"></ion-icon>
+          <ion-label>Archived</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="trash" slot="start"></ion-icon>
+          <ion-label>Trash</ion-label>
+        </ion-item>
+        <ion-item routerLink="/tabs/about">
+          <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+          <ion-label>Loomaaiast</ion-label>
+        </ion-item>
+    </ion-menu-toggle>
+    </ion-list>
+
+    <ion-list>
+      <ion-list-header>
+        Administraatorile
+      </ion-list-header>
+      <ion-menu-toggle>
+        <ion-item routerLink="/animal-all">
+          <ion-icon name="logo-reddit" slot="start"> 
+            <ion-label>Loomade seaded</ion-label>  
+          </ion-icon>
+        </ion-item>
+      </ion-menu-toggle>
     </ion-list>
   </ion-content>
 </ion-menu>

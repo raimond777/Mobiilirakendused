@@ -35,6 +35,10 @@ const routes: Routes = [
     path: 'history',
     loadChildren: () => import('./menu-pages/history/history.module').then( m => m.HistoryPageModule)
   },
+  {
+    path: 'buying-options',
+    loadChildren: () => import('./menu-pages/business/buying-options/buying-options.module').then( m => m.BuyingOptionsPageModule)
+  },
 ];
 
 @NgModule({

@@ -1,17 +1,48 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+  </ion-buttons>
     <ion-title>
-      Tab 3
+      Loomaaiast
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
+  <ion-card>
+     <img src="https://www.visit-hannover.com/var/storage/images/media/01-data-neu/galerien/bildergalerie-erlebnis-zoo-hannover/l%C3%B6we-im-erlebnis-zoo-hannover/12412513-3-ger-DE/L%C3%B6we-im-Erlebnis-Zoo-Hannover_image_full.jpg " alt="">
+    <ion-card-title>
+      Loomaaed
+    </ion-card-title>
+    
+    <ion-card-content>
+       Loomaaed alustas tööd 2018  aastal, millal meile saabus esimene loom Ilves "Ilku".
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+    </ion-card-content>
+    </ion-card>
+
+
+
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" #fab>
+    <ion-fab-button>
+      <ion-icon name="share-social"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="vimeo" (click)="openSocial('Vimeo', fab)">
+        <ion-icon name="logo-vimeo"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="instagram" (click)="openSocial('Instagram', fab)">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="twitter" (click)="openSocial('Twitter', fab)">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="facebook" (click)="openSocial('Facebook', fab)">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>

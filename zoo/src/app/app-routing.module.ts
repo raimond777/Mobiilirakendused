@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'animal-detail/:animalId',
     loadChildren: () => import('./animal-detail/animal-detail.module').then( m => m.AnimalDetailPageModule)
+  },
+  {
+    path: 'animal-all',
+    loadChildren: () => import('./animal-all/animal-all.module').then( m => m.AnimalAllPageModule)
   }
 ];
 @NgModule({

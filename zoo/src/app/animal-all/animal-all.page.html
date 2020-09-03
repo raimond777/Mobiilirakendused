@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    <ion-back-button defaultHref="/">
+
+    </ion-back-button >
+  </ion-buttons>
+    <ion-title>Loomade seaded</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+  <ion-content [fullscreen]="true"> 
+    <ion-list>
+    <ion-item size="12" *ngFor="let animal of animals, let i = index" >        
+          <ion-avatar slot="start">
+            <img [src]="animal.profilePic" alt="pildid"> 
+          </ion-avatar>
+          <ion-label [routerLink]="['/animal-detail', animal.id]">
+            <h2>{{animal.name}}</h2>
+          </ion-label>        
+          <a [routerLink]="['animal-edit' ,i]">Muuda</a> 
+      
+    </ion-item>
+  </ion-list>      
+    </ion-content>       
+

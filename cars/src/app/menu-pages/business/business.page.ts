@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BusinessService } from './business.service';
 
 @Component({
   selector: 'app-business',
@@ -6,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./business.page.scss'],
 })
 export class BusinessPage implements OnInit {
-
-  constructor() { }
-
+  opportunities;
+  constructor(private businessService: BusinessService) { }
   ngOnInit() {
+    this.opportunities = this.businessService.business;
   }
 
 }

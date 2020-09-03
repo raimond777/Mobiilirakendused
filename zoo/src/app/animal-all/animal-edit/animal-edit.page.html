@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    <ion-back-button defaultHref="/">
+
+    </ion-back-button >
+  </ion-buttons>
+    <ion-title>looma info muutmine</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="animalEditForm" (ngSubmit)= "onSubmit(animalEditForm)">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{animal.name}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+          <ion-label 
+          position="floating">Nimi </ion-label>
+        <ion-input formControlName="name" required></ion-input>
+       </ion-item> 
+          <ion-item>
+          <ion-label 
+          position="floating">Pilt </ion-label>
+        <ion-input formControlName="profilePic" required></ion-input>
+  
+          </ion-item> 
+          <ion-item>
+          <ion-label 
+          position="floating">Asukoht </ion-label>
+        <ion-input formControlName="location" required></ion-input>
+      </ion-item> 
+      <ion-item>
+        <ion-label 
+        position="floating">Loomast </ion-label>
+      <ion-input formControlName="about" required>
+        </ion-input>
+          </ion-item>
+
+      <ion-button color="danger"(click)="onEmpty(animalEditForm)">
+        <ion-icon name="close"></ion-icon>
+        
+        t[hista muutused</ion-button> 
+  
+  
+  
+          <ion-button [disabled] = "animalEditForm.invalid"  routerLink= "/animal-all" type="submit ">
+            
+            <ion-icon name="checkmark-outline"></ion-icon>
+            Muuda looma</ion-button> 
+        </ion-card-content>
+      
+    </ion-card>
+    
+  
+  </form>
+</ion-content>

@@ -12,43 +12,33 @@
     <ion-card>
      
       <ion-card-header>
-        <ion-card-subtitle>Autod</ion-card-subtitle>
+        <ion-card-subtitle > Autod
+          
+        </ion-card-subtitle>
         <ion-card-title>Partnerlus ja koostöö</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <ion-list>
-          <ion-item>
+          <ion-item class="nav-item nav-link-edit" [routerLink]="['/buying-options']">     
             <ion-thumbnail slot="start"> 
             <img src="\assets\icon\arrow.png " alt="arrow target">
             </ion-thumbnail>
             <ion-label>
               <h4>Müü meil oma aotosid.</h4>
               <p>Võidad sina, võidame meie.</p>
-
             </ion-label>
+          </ion-item>      
 
-        </ion-item><ion-item>
+        <ion-item *ngFor="let opportunity of opportunities">
           <ion-thumbnail slot="start"> 
-          <img src="\assets\icon\arrow.png " alt="arrow target">
+            <img src="{{  opportunity.picture }}">
           </ion-thumbnail>
           <ion-label>
-            <h4>Müü meil oma aotosid.</h4>
-            <p>Võidad sina, võidame meie.</p>
-
+            <h4> {{ opportunity.title }} </h4>
+            <p> {{ opportunity.description }} </p>
           </ion-label>
-
-      </ion-item><ion-item>
-        <ion-thumbnail slot="start"> 
-        <img src="\assets\icon\arrow.png " alt="arrow target">
-        </ion-thumbnail>
-        <ion-label>
-          <h4>Müü meil oma aotosid.</h4>
-          <p>Võidad sina, võidame meie.</p>
-
-        </ion-label>
-
-    </ion-item>
-          <ion-item></ion-item>         
+        </ion-item>
+               
         </ion-list>
       </ion-card-content>
     </ion-card>
