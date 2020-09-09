@@ -9,8 +9,11 @@ const routes: Routes = [
   },
   {
     path: 'hero-view/:heroId',
-    loadChildren: () => import('./hero-view/hero-view.module')
-    .then( m => m.HeroViewPageModule)
+    loadChildren: () => import('./hero-view/hero-view.module').then( m => m.HeroViewPageModule)
+  },
+  {
+    path: 'hero-edit/:heroId',
+    loadChildren: () => import('./hero-edit/hero-edit.module').then( m => m.HeroEditPageModule)
   }
 ];
 

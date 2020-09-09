@@ -8,7 +8,7 @@ import { HeroesService } from 'src/app/heroes.service';
   styleUrls: ['./hero-view.page.scss'],
 })
 export class HeroViewPage implements OnInit {
-  hero;
+  hero: {id:string, name: string, weapon: string, catchphrase: string, picture: string};
 
 
   constructor(private route: ActivatedRoute,

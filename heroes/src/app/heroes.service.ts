@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class HeroesService {
-  [x: string]: any;
+  
   marvel = [
     {id: "m1", name: "Spider-man", weapon: "Web", catchphrase: "With great power, comes great responsibilities.", picture: 'https://media.playstation.com/is/image/SCEA/marvels-spider-man-hero-banner-02-ps4-us-16jul18?$native_nt$'},
     {id: "m2", name: "Hulk", weapon: "Web", catchphrase: "With great power, comes great responsibilities.", picture: 'https://vignette.wikia.nocookie.net/mua/images/f/f3/MUA3_Hulk.png/revision/latest?cb=20190622010859'},
@@ -34,4 +34,19 @@ export class HeroesService {
   ];
 
   constructor() { }
+
+  getMarvelHeroes(): {id:string, name: string, weapon: string, catchphrase: string, picture: string} []
+    return this.marvel.slice();
+  }
+  addMarvelHero(hero:{id:string, name: string, weapon: string, catchphrase: string, picture: string}o){
+    this.marvel.push(hero);
+   }
+
+  deleteMarvelHero(index: number){
+     this.marvel.splice(index, 1)};
+
+  editMarvelHero(hero: {id:string, name: string, weapon: string, catchphrase: string, picture: string}){
+    let index= this.marvel.findIndex(heroinArray=>heroinArray.id==hero.id);
+    this.marvel[index]=hero;
+  }
 }

@@ -8,10 +8,9 @@
 
 <ion-content [fullscreen]="true">
   <ion-list>
-    <ion-item *ngFor= "let hero of marvelHeroes"
-     [routerLink]="['hero-view', hero.id]" >
-      {{hero.name}} 
-     
-    </ion-item>  
+    <ion-item *ngFor= "let hero of marvelHeroes">
+     <ion-label [routerLink]="['hero-view', hero.id]">{{hero.name}}</ion-label>    
+     <a slot="end" [routerLink]="['hero-edit', hero.id]">Muuda</a>
+    </ion-item>
   </ion-list>
 </ion-content>

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>hero-edit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form (ngSubmit)="onSubmit()" [formGroup]="heroEditForm">
+<input formcontrolName="name" type="text">
+<input formcontrolName="weapon" type="text">
+<input formcontrolName="catchphrase" type="text">
+<input formcontrolName="picture" type="text">
+<button [routerLink]="/tabs/marvel" type="submit">Muuda</button>
+
+
+
+</form>
+
+  
+          
+</ion-content>

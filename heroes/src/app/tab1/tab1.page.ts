@@ -7,12 +7,13 @@ import { HeroesService } from '../heroes.service';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page implements OnInit{
-  marvelHeroes;
+  marvelHeroes:{id:string, name: string, weapon: string, catchphrase: string, picture: string} ;
 
   constructor(private heroesService: HeroesService) {}
   ngOnInit(): void {
     this.marvelHeroes = this.heroesService.marvel;
     console.log(this.marvelHeroes);
+    
 
   }
 
