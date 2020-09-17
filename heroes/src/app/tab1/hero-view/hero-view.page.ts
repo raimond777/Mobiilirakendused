@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HeroesService } from 'src/app/heroes.service';
+import { MarvelHero } from 'src/app/marvel-hero.models';
 
 @Component({
   selector: 'app-hero-view',
@@ -8,7 +9,7 @@ import { HeroesService } from 'src/app/heroes.service';
   styleUrls: ['./hero-view.page.scss'],
 })
 export class HeroViewPage implements OnInit {
-  hero: {id:string, name: string, weapon: string, catchphrase: string, picture: string};
+  hero: MarvelHero;
 
 
   constructor(private route: ActivatedRoute,

@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { MarvelHero } from './marvel-hero.models';
+import { CapcomHero } from './capcom-hero.model';
 
 @Injectable({
   providedIn: 'root'
@@ -35,18 +37,30 @@ export class HeroesService {
 
   constructor() { }
 
-  getMarvelHeroes(): {id:string, name: string, weapon: string, catchphrase: string, picture: string} []
+  getMarvelHeroes(): MarvelHero []
+  {
     return this.marvel.slice();
   }
-  addMarvelHero(hero:{id:string, name: string, weapon: string, catchphrase: string, picture: string}o){
+  getOneMarvelHero(id:string):MarvelHero
+  {
+    return this.marvel.find(heroFromArray => heroFromArray.id == id);
+  }
+    
+ 
+  addMarvelHero (hero: MarvelHero ): void{
     this.marvel.push(hero);
    }
 
   deleteMarvelHero(index: number){
-     this.marvel.splice(index, 1)};
+     this.marvel.splice (index, 1)};
 
-  editMarvelHero(hero: {id:string, name: string, weapon: string, catchphrase: string, picture: string}){
+  editMarvelHero(hero: MarvelHero){
     let index= this.marvel.findIndex(heroinArray=>heroinArray.id==hero.id);
     this.marvel[index]=hero;
+    console.log(hero);
+  }
+  getOneCapcomHero(id:string):CapcomHero
+  {
+    return this.capcom.find(heroFromArray => heroFromArray.id == id);
   }
 }

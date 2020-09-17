@@ -8,14 +8,8 @@ const routes: Routes = [
     component: Tab2Page,
   },
   {
-    path: 'hero-view/:heroId',
-    loadChildren: () => import
-    ('./hero-view/hero-view.module')
-    .then( m => m.HeroViewPageModule)
-  },
-  {
-    path: 'hero-edit/:heroId',
-    loadChildren: () => import('./hero-edit/hero-edit.module').then( m => m.HeroEditPageModule)
+    path: 'item-edit/:itemId',
+    loadChildren: () => import('./item-edit/item-edit.module').then( m => m.ItemEditPageModule)
   }
 ];
 

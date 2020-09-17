@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HeroesService } from 'src/app/heroes.service';
+import { CapcomHero } from 'src/app/capcom-hero.model';
 
 @Component({
   selector: 'app-hero-view',
@@ -8,7 +9,7 @@ import { HeroesService } from 'src/app/heroes.service';
   styleUrls: ['./hero-view.page.scss'],
 })
 export class HeroViewPage implements OnInit 
-{ hero;
+{ hero: CapcomHero;
 
 
   constructor(private route: ActivatedRoute,
@@ -18,8 +19,7 @@ export class HeroViewPage implements OnInit
     this.route.params.subscribe(params=> 
       {
         let id = params.heroId;
-        this.hero = this.heroeService.capcom.find
-        (heroFromArray => heroFromArray.id == id)          
+        this.hero = this.heroeService.getOneCapcomHero (id);          
       })
   }
 }

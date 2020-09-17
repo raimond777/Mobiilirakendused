@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>hero-edit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form (ngSubmit)="onSubmit()" [formGroup]="heroEditForm">
+  <input formControlName="name" type="text">
+</form>
+</ion-content>

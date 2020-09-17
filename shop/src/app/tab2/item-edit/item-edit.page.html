@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button ></ion-back-button>
+    </ion-buttons>
+    <ion-title>item-edit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
+  <input formControlName="name" type="text" required><br>
+  <input  formControlName="price" type="text" required><br>
+  <input formControlName="size" type="text" required><br>
+  <button type="submit" [disabled]="form.invalid">
+    Muuda
+  </button>
+</form>
+</ion-content>

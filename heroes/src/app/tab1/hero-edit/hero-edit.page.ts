@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HeroesService } from 'src/app/heroes.service';
 import { FormGroup, FormControl } from '@angular/forms';
+import { MarvelHero } from 'src/app/marvel-hero.models';
 
 @Component({
   selector: 'app-hero-edit',
@@ -9,31 +10,45 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./hero-edit.page.scss'],
 })
 export class HeroEditPage implements OnInit {
-  hero: {id:string, name: string, weapon: string, catchphrase: string, picture: string};
+  hero: MarvelHero;
   heroEditForm:FormGroup;
   id: string;
 
-  constructor(private route: ActivatedRoute, private heroesService: HeroesService) { }
+  constructor(private route: ActivatedRoute, 
+    private heroesService: HeroesService,
+    private router: Router
+    ) { }
 
   ngOnInit():void {
-    this.route.params.subscribe(params=>{this.id=params.heroId
-    
-    this.hero=this.heroesService.marvel
-    .find((heroFromArray: { id: any; }) => heroFromArray.id==this.id)
-    console.log(this.hero);
-  });
+    this.getHeroByParams();
+    this.initForm(); 
+  }
+    getHeroByParams(){
+    this.route.params.subscribe(params=>{
+    this.id=params.heroId    
+    this.hero=this.heroesService.getOneMarvelHero(this.id);
+   });
+  }
 
-  this.heroEditForm = new FormGroup({
+       
+  
+  initForm(){
+this.heroEditForm = new FormGroup({
     name: new FormControl(this.hero.name),
     weapon: new FormControl(this.hero.weapon),
     catchphrase: new FormControl(this.hero.catchphrase),
     picture: new FormControl(this.hero.picture),
     id: new FormControl(this.hero.id)
  });
+
   }
 
   onSubmit():void{
-    this.heroesService.editMarvelHero( this.heroEditForm.value, this.id); 
+    let form=this.heroEditForm.value;
+    let newHero = new MarvelHero(form.id, form.name, form.weapon, form.catchphrase, form.picture)
+    this.heroesService.editMarvelHero(newHero);
+    this.router.navigateByUrl("/tabs/marvel");
+
   }
 
 }
