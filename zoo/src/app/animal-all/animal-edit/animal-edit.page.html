@@ -6,6 +6,11 @@
     </ion-back-button >
   </ion-buttons>
     <ion-title>looma info muutmine</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onDelete()" routerLink= "/animal-all" type="submit ">
+        <ion-icon  name="trash"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -38,22 +43,27 @@
       <ion-input formControlName="about" required>
         </ion-input>
           </ion-item>
+          <ion-item><ion-label>N'htav</ion-label>
+            <ion-checkbox slot="start" formControlName="visible"></ion-checkbox>
+          </ion-item>
+          
 
       <ion-button color="danger"(click)="onEmpty(animalEditForm)">
         <ion-icon name="close"></ion-icon>
-        
-        t[hista muutused</ion-button> 
+        t[hista muutused
+      </ion-button> 
   
   
   
-          <ion-button [disabled] = "animalEditForm.invalid"  routerLink= "/animal-all" type="submit ">
+      <ion-button [disabled] = "animalEditForm.invalid"  routerLink= "/animal-all" type="submit ">
             
-            <ion-icon name="checkmark-outline"></ion-icon>
-            Muuda looma</ion-button> 
-        </ion-card-content>
+        <ion-icon name="checkmark-outline"></ion-icon>
+        Muuda looma
+      </ion-button> 
+    </ion-card-content>
       
-    </ion-card>
+  </ion-card>
     
   
-  </form>
+</form>
 </ion-content>

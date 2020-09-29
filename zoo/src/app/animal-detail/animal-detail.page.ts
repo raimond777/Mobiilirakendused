@@ -19,7 +19,7 @@ export class AnimalDetailPage implements OnInit {
    {console.log(params);
     let id = params.animalId;
    this.animal = this.animalService.animals.find
-   (animal=>animal.id == id);
+   (animalFromService => animalFromService.id == id);
    console.log(this.animal);   
   })
   }

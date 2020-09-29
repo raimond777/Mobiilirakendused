@@ -13,7 +13,7 @@
 <ion-grid>
   <ion-row>
     <ion-col size="12" *ngFor="let animal of animals">
-      <ion-card>
+      <ion-card *ngIf="animal.visible">
         <ion-card-header>
           <ion-avatar>
             <img [src]="animal.profilePic" alt="pildid"> 
